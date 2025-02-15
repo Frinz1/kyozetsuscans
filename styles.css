@@ -1,0 +1,649 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #7c3aed;
+    --primary-dark: #6d28d9;
+    --secondary-color: #f4f4f5;
+    --text-primary: #18181b;
+    --text-secondary: #71717a;
+    --background: #ffffff;
+    --card-background: #f8fafc;
+    --border-color: #e4e4e7;
+    --hover-color: #f4f4f5;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--background);
+}
+
+/* Header Styles */
+.main-header {
+    background-color: var(--background);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.logo i {
+    font-size: 1.5rem;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: var(--hover-color);
+    color: var(--primary-color);
+}
+
+.search-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#searchInput {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+    width: 300px;
+    font-size: 0.875rem;
+}
+
+.search-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Genre Filters */
+.genre-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: var(--card-background);
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.genre-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.875rem;
+}
+
+.genre-btn:hover,
+.genre-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Main Content Styles */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.section {
+    margin-bottom: 2rem;
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Manga Grid Styles */
+.manga-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.manga-card {
+    background-color: var(--card-background);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.2s;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+}
+
+.manga-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.manga-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.manga-info {
+    padding: 1rem;
+}
+
+.manga-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+/* Manga Details Styles */
+.manga-details-container {
+    background-color: var(--card-background);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.manga-header {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.manga-cover {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.manga-meta {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.status-badge {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+}
+
+.genre-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.genre-tag {
+    background-color: var(--secondary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+}
+
+.description {
+    margin: 1rem 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.chapter-navigation {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.chapter-navigation button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.chapter-navigation button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Chapter List Styles */
+.chapter-grid {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.chapter-item {
+    background-color: var(--background);
+    padding: 1rem;
+    border-radius: 0.375rem;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.chapter-item:hover {
+    background-color: var(--hover-color);
+    border-color: var(--primary-color);
+}
+
+.chapter-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chapter-number {
+    font-weight: 600;
+}
+
+.chapter-title {
+    color: var(--text-secondary);
+}
+
+/* Reader Styles */
+.reader-header {
+    background-color: var(--background);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+}
+
+.back-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.back-btn:hover {
+    background-color: var(--hover-color);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.reader-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.nav-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.nav-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.nav-btn:disabled {
+    background-color: var(--border-color);
+    cursor: not-allowed;
+}
+
+.reader-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.reader-container img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 0.375rem;
+}
+
+/* About Page Styles */
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--card-background);
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.developer-profile {
+    text-align: center;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+.role {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    transition: all 0.2s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.about-text {
+    max-width: 600px;
+    margin: 1.5rem auto;
+    text-align: left;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.skills {
+    margin-top: 2rem;
+}
+
+.skills h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.skill-tags span {
+    background-color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+}
+
+.skill-tags span:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Loading and Error States */
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+}
+
+.error-message {
+    text-align: center;
+    padding: 2rem;
+    color: #ef4444;
+    background-color: #fee2e2;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+}
+
+.retry-btn {
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.2s;
+}
+
+.retry-btn:hover {
+    background-color: #dc2626;
+}
+
+/* Footer Styles */
+.main-footer {
+    background-color: var(--card-background);
+    border-top: 1px solid var(--border-color);
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .main-nav ul {
+        gap: 1rem;
+    }
+
+    .search-container {
+        width: 100%;
+    }
+
+    #searchInput {
+        width: 100%;
+    }
+
+    .manga-header {
+        grid-template-columns: 1fr;
+    }
+
+    .manga-cover {
+        height: 300px;
+    }
+
+    .reader-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .reader-controls {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .manga-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .chapter-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .genre-filters {
+        justify-content: center;
+    }
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Floating Navigation */
+.floating-nav {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--background);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 1000;
+    border: 1px solid var(--border-color);
+}
+
+.floating-nav .nav-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.floating-nav .nav-btn:disabled {
+    background-color: var(--border-color);
+    cursor: not-allowed;
+}
+
+.floating-nav .nav-btn:not(:disabled):hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .floating-nav {
+        width: calc(100% - 2rem);
+        justify-content: space-between;
+    }
+}

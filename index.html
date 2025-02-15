@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manga Reader</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-book-reader"></i>
+                <h1>Manga Reader</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="nav-link" data-page="home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#" class="nav-link" data-page="manga-list"><i class="fas fa-books"></i> Manga List</a>
+                    </li>
+                    <li><a href="#" class="nav-link" data-page="about"><i class="fas fa-user"></i> About</a></li>
+                </ul>
+            </nav>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search manga...">
+                <button id="searchButton" class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="section-header">
+                <h2>Latest Updates</h2>
+            </div>
+            <div id="mangaList" class="manga-grid"></div>
+        </section>
+
+
+        <!-- <section id="manga-list" class="section" style="display: none;">
+            <div class="section-header">
+                <h2>Manga List</h2>
+            </div>
+            <div class="genre-filters">
+                <button class="genre-btn active" data-genre="all">All</button>
+                <button class="genre-btn" data-genre="action">Action</button>
+                <button class="genre-btn" data-genre="adventure">Adventure</button>
+                <button class="genre-btn" data-genre="comedy">Comedy</button>
+                <button class="genre-btn" data-genre="drama">Drama</button>
+                <button class="genre-btn" data-genre="fantasy">Fantasy</button>
+                <button class="genre-btn" data-genre="romance">Romance</button>
+                <button class="genre-btn" data-genre="slice-of-life">Slice of Life</button>
+            </div>
+            <div id="filteredMangaList" class="manga-grid"></div>
+        </section> -->
+
+        <section id="searchResults" class="section" style="display: none;">
+            <h2>Search Results</h2>
+            <div id="searchMangaList" class="manga-grid"></div>
+        </section>
+
+
+        <section id="about" class="section" style="display: none;">
+            <div class="about-container">
+                <div class="developer-profile">
+                    <img src="frinz.png" alt="Developer" class="profile-image">
+                    <h2>Frinz Charles</h2>
+                    <p class="role">Full Stack Developer</p>
+                    <div class="social-links">
+                        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/yourusername" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    <div class="about-text">
+                        <p>As a passionate manga enthusiast and web developer, I created this Manga Reader to provide a
+                            seamless reading experience for fellow manga lovers. This project combines my love for
+                            coding and Japanese comics into a user-friendly platform.</p>
+                        <p>The application is built using modern web technologies and integrates with the MangaDex API
+                            to provide a vast library of manga titles. My goal was to create an intuitive interface that
+                            makes it easy to discover, read, and keep track of your favorite manga series.</p>
+                    </div>
+                    <div class="skills">
+                        <h3>Technologies Used</h3>
+                        <div class="skill-tags">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>Node.js</span>
+                            <span>Express</span>
+                            <span>MangaDex API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mangaDetails" class="section" style="display: none;">
+            <div class="manga-details-container">
+                <div class="manga-header">
+                    <img id="mangaCover" src="/placeholder.svg" alt="" class="manga-cover">
+                    <div class="manga-info">
+                        <h2 id="mangaTitle"></h2>
+                        <div class="manga-meta">
+                            <span id="mangaStatus" class="status-badge"></span>
+                            <div id="mangaGenres" class="genre-tags"></div>
+                        </div>
+                        <p id="mangaDescription" class="description"></p>
+                        <div class="chapter-navigation">
+                            <button class="first-chapter">First Chapter</button>
+                            <button class="latest-chapter">Latest Chapter</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="chapters-section">
+                    <h3>Chapters</h3>
+                    <div id="chapterList" class="chapter-grid"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="chapterReader" class="section" style="display: none;">
+            <div class="reader-header">
+                <button id="backToManga" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Manga
+                </button>
+                <h2 id="chapterTitle"></h2>
+                <div class="reader-controls">
+                    <button id="prevChapter" class="nav-btn">
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    <button id="nextChapter" class="nav-btn">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="pageContainer" class="reader-container"></div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2024 KyozetsuScans. All rights reserved.</p>
+
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
